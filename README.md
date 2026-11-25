@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="public/logo.webp" alt="Reloved.Market" width="320">
+  <img src="docs/images/banner.png" alt="Reloved.Market: Reuse. Recycle. Reloved." width="100%">
 </p>
 
 <p align="center">
-  <b>The little back office behind Reloved.Market</b><br>
-  A private web app I use to plan, list and post for my preloved shop in Malaysia.
+  <b>A street-style back office for a small preloved shop.</b><br>
+  Planning, listings, AI pricing and Threads ideas in one place, on phone and laptop.
 </p>
 
 <p align="center">
@@ -17,27 +17,77 @@
 
 ---
 
-## Why I made this
+## The story
 
-I sell secondhand furniture, electronics and home stuff on Carousell ([@relov3d.market](https://www.carousell.com.my/u/relov3d.market/)) and Facebook Marketplace. My plans were in Google Calendar, prices were in my head, listings were in Carousell and my Threads ideas were in my notes app. Too many places.
+I'm a tech guy who's really into street culture. Together with my partner I run **Reloved.Market**, a preloved shop in Malaysia selling secondhand furniture, electronics, home stuff and more on Carousell ([@relov3d.market](https://www.carousell.com.my/u/relov3d.market/)), Facebook Marketplace and Threads.
 
-So I built one app that keeps all of it together, works on my phone and laptop, and costs nothing to run. It's only for me and my partner, so there's no sign up and everything sits behind a login with 2-step verification.
+Running a small shop sounds simple until you count how many apps it takes. Plans in Google Calendar, listings tracked in Notion, drafts sent to each other on WhatsApp, prices guessed from memory and Threads ideas scribbled at midnight. Things got lost all the time.
 
-> This repo is public so people can see how it's built. The live app and all the shop data stay private.
+So I built our own app. Every feature below started as a real problem we kept running into.
+
+> This repo is public so people can see how it's built. The live app and all our shop data stay private.
+
+## Problems we had, and what we built
+
+### 1. Files everywhere → the Home "folders"
+
+I always had to compile our stuff into files and then go and **find them physically**. That habit is where the Home screen came from: four folders stacked like a real file box (Planning, Listings, AI Price, Threads). Each one shows what's inside at a glance, and you tap it to open it, just like pulling a folder out of a drawer. Nothing to dig for anymore.
+
+### 2. "What do we post tonight?" → Threads ideas with AI
+
+Every single night we struggled to find a good topic for Threads and had to think up an idea from zero. Now we jot down a rough idea, even half a sentence, and the AI turns it into a proper Threads post in casual Malaysian English with hashtags that fit. Then we drop it onto a day of the week so the whole week is planned in one go.
+
+### 3. Notion + WhatsApp for listings → one connected listing flow
+
+We used to track listings in Notion (what's for sale, what's sold) and draft captions by sending them to each other on WhatsApp. Now listing and posting live together: add an item with a photo, tap **AI help** for a title, description and fair RM price, keep it as a draft, and mark it posted or sold. Everything stays connected, so the totals on Home update by themselves and nobody has to open WhatsApp to draft.
+
+### 4. Forgetting today's schedule → Planner + Google Calendar + daily email
+
+I kept forgetting what was on for the day. The Planner shows meetups, events and posting plans on a calendar, syncs every task to Google Calendar, and sends a summary to our company email **every morning at 7:40am**. So the plan finds me, instead of me having to look for it.
+
+### 5. Coming soon → smart tracker + POS
+
+Next up is a **smart money tracker** and a simple **POS system**, so every sale is recorded properly and it's easier for us to keep tax records ready for Malaysia's **e-invoice (LHDN MyInvois)**.
+
+## Design
+
+<p align="center">
+  <img src="docs/images/folders.png" alt="The four Home folders: Today's Plan, Product Listing, AI Price Check and Threads Ideas" width="100%">
+</p>
+
+I designed the app myself. The idea was to show that a business tool doesn't have to look like a spreadsheet. It can have the same **street and indie vibe** as the shop itself and still make the work easier.
+
+- **Hand-drawn identity.** The ReLov3d logo, the doodle icons for each folder and the pixel-style category icons are all hand-made, not stock.
+- **Folders you can feel.** Rounded cards with tabs, stacked like a real file box. On laptop they pop out when your mouse passes over them; on phone they lift gently one by one as you scroll.
+- **Dark base, soft colours.** Black like a night street, with dusty pastel folders and one loud orange accent for what matters.
+- **Small motion, not noise.** The tab bar's highlight slides between pages, icons bounce a little when tapped, and everything respects "reduce motion".
+- **Phone first.** Built to sit on the home screen like a real app, fitting the notch and home bar, with a wider layout on laptop.
+
+<p align="center">
+  <img src="docs/images/categories.png" alt="Category filters with hand-made icons" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/images/palette.png" alt="Colour palette" width="100%">
+</p>
+
+**Type:** the phone's own system font (SF Pro / Inter) for the interface, Bricolage Grotesque for the big "Reuse. Recycle. Reloved." line on the login page.
+
+## Not just for us
+
+We built this for Reloved.Market, but the problems aren't ours alone. Most small shops juggle the same mess of apps for planning, stock, pricing and social posts. The idea behind this project works for **SMEs anywhere in the world**: one simple, good-looking place that keeps the daily work connected, runs on free tools, and has a bit of personality.
 
 ## What it does
 
 | | |
 |---|---|
-| **Home** | Shop totals (sold, for sale) and four "folders" for planning, listings, price check and Threads. |
-| **Planner** | Month calendar with meetups, events and things to post. Tasks sync to Google Calendar. |
-| **Listings** | All my items with photos, prices, condition and status. Add or edit by hand, or tap *AI help* to get a title, description and a fair RM price from a photo. |
-| **AI price check** | Snap a photo and get a price range based on the Malaysian secondhand market. |
-| **Threads ideas** | Write a rough idea, get it rewritten as a Threads post with hashtags, then plan it for a day of the week. |
-| **Daily email** | Every morning at 7:40am I get an email with today's tasks, posts and what's still for sale. |
-| **Shared shop** | My partner logs in with her own account and sees the same shop. |
-
-It's built phone-first (fits the notch and home bar, can be added to the home screen like an app) and has a wider layout on laptop with hover effects.
+| **Home** | Shop totals (sold, for sale) and the four folders. |
+| **Planner** | Month calendar with meetups, events and posting plans. Tasks sync to Google Calendar. |
+| **Listings** | Items with photos, prices, condition and status. Add or edit by hand, or tap *AI help*. |
+| **AI price check** | Snap a photo and get a price range for the Malaysian secondhand market. |
+| **Threads ideas** | Rough idea in, Threads post and hashtags out, planned across the week. |
+| **Daily email** | 7:40am summary of today's tasks, posts and stock, sent to the company inbox. |
+| **Shared shop** | My partner has her own login and sees the same shop. |
 
 ## How it fits together
 
@@ -130,8 +180,10 @@ Short version: 2-step login for everyone, row level security on every table, pri
 
 ## What's next
 
+- [ ] Smart money tracker for sales, costs and profit
+- [ ] Simple POS for recording sales on the spot
+- [ ] E-invoice ready records for LHDN MyInvois
 - [ ] Post to Threads straight from the app (right now it opens Threads with the text ready)
-- [ ] Simple sales chart by month
 - [ ] Carousell and Facebook don't allow posting from other apps, so that stays copy caption + open link for now
 
 ## License
